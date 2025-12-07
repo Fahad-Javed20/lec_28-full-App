@@ -1,39 +1,87 @@
 import express from "express";
 import cors from "cors";
 
-const app = express()
-const port = 3000;
+const app = express();
+const port = process.env.port || 3000;
 
-const employee = [
-    {
-        id:1,
-        name:"Fahad",
-        salary:4000000000},
-         address:{
-            city:"lahore" ,
-             country:"Pakistan"
-            },
-    {id:1,name:"Usama",salary:4000000000},
-    {id:1,name:"Shehroz",salary:4000000000}
-]
+type EmployeeType = {
+  id: number;
+  name: string;
+  salary: number;
+  address: {
+    city: string;
+    country: string;
+  };
+};
+
+const employees: EmployeeType[] = [
+  {
+    id: 1,
+    name: "Fahad",
+    salary: 4000000000,
+    address: {
+      city: "Lahore",
+      country: "Pakistan",
+    },
+  },
+  {
+    id: 2,
+    name: "Fahad",
+    salary: 4000000000,
+    address: {
+      city: "Lahore",
+      country: "Pakistan",
+    },
+  },
+  {
+    id: 3,
+    name: "Fahad",
+    salary: 4000000000,
+    address: {
+      city: "Lahore",
+      country: "Pakistan",
+    },
+  },
+];
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Home Page");
+});
+
+app.get("/employees", (req, res) => {
+  return res.status(201).json(employees);
+});
+
+app.get("/employees/:id", (req, res) => {
+  const emp_id = Number(req.params.id);
+  const employee = employees.find((emp) => emp.id === emp_id);
+  if (!employee) {
+    return res.status(404).json({ message: "Employee not found" });
+  }
+  return res.json(employee);
+});
 
 
-app.use(cors())
-app.use(express.json())
+app.delete("/employees/:id", (req, res) => {
+  const emp_id = Number(req.params.id);
+  const employee = employees.find((emp) => emp.id === emp_id);
+  if (!employee) {
+    return res.status(404).json({ message: "Employee not found" });
+  }
+   deleteEmployee(emp_id);
+  return res.status(201).json({message:"Employed Successfully Delete"});
+  
+});
+
+app.listen(port, () => {
+  console.log(`port is running on ${port} ...`);
+});
 
 
-app.get("/",(req,res) =>{
-    res.send("Home Page")
-})
+function deleteEmployee(excludeId: number): EmployeeType[] {
+  return employees.filter((emp) => emp.id !== excludeId);
+}
 
-app.get("/products",(req,res) =>{
-    res.send("Product Page")
-})
-
-app.get("/users",(req,res) =>{
-    res.send("Users Page")
-})
-
-app.listen(port,()=>{
-    console.log(`port is running on ${port}`)
-})
