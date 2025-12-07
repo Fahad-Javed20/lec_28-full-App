@@ -15,9 +15,12 @@ const EmployeeDashboard = () => {
     fetchEmployees();
   }, []);
 
+  const handleAddEmployee =  (newEmployee: EmployeeType) => {
+    setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
+
   return (
     <div>
-      <EmployeeForm />
+      <EmployeeForm onAddEmployee={handleAddEmployee} />
       <EmployeeListComponent employees={employees} />
     </div>
   );
