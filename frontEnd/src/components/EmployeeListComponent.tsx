@@ -1,14 +1,14 @@
 import type { EmployeeType } from "../types/EmployeeType"
 
 interface EmployeeListComponentProps {
-    employee: EmployeeType[]
+    employees: EmployeeType[]
 }
 
-const EmployeeListComponent = ({ employee }: EmployeeListComponentProps) => {
+const EmployeeListComponent = ({ employees }: EmployeeListComponentProps) => {
   return (
     <div>
         <h2>Employee List</h2>
-        {employee.map((emp) => (
+        {employees.map((emp) => (
           <div key={emp.id}>
             <p>Name: {emp.name}</p>
             <p>Salary: {emp.salary}</p>
