@@ -14,7 +14,6 @@ const EmployeeListComponent = ({ employee }: EmployeeListComponentProps) => {
             <p>Salary: {emp.salary}</p>
             <p>City: {emp.address.city}</p>
             <p>Country: {emp.address.country}</p>
-            <hr />
           </div>
         ))}
     </div>
