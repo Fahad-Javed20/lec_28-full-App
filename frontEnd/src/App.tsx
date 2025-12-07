@@ -1,16 +1,12 @@
-
-import './App.css'
-import EmployeeDashboard from './components/EmployeeDashboard'
+import "./App.css";
+import EmployeeDashboard from "./components/EmployeeDashboard";
 
 function App() {
-  
-  
-
   return (
     <>
       <EmployeeDashboard />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
