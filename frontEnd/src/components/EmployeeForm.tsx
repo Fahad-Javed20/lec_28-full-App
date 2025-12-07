@@ -14,11 +14,11 @@ const EmployeeForm = ({ onAddEmployee }: EmployeeFormProps) => {
         reset();
     }
   return (
-    <div>
+    <div className="p-4 border border-gray-300 rounded mb-6">
         <h2 className="text-2xl font-bold mb-4">Add New Employee</h2>
-        <form className="mb-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="mb-6 max-w-md mx-auto" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
-                <label className="block text-gray-700 mb-2" htmlFor="name">Name:</label>
+                <label className="block text-gray-700 mb-2 text-left" htmlFor="name">Name:</label>
                 <input
                     type="text"
                     id="name"
@@ -28,7 +28,7 @@ const EmployeeForm = ({ onAddEmployee }: EmployeeFormProps) => {
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
             </div>  
             <div className="mb-4">
-                <label className="block text-gray-700 mb-2" htmlFor="salary">Salary:</label>
+                <label className="block text-gray-700 mb-2 text-left" htmlFor="salary">Salary:</label>
                 <input
                     type="number"
                     id="salary"
@@ -38,7 +38,7 @@ const EmployeeForm = ({ onAddEmployee }: EmployeeFormProps) => {
                 {errors.salary && <p className="text-red-500 text-sm mt-1">{errors.salary.message}</p>}
             </div>  
             <div className="mb-4">
-                <label className="block text-gray-700 mb-2" htmlFor="city">City:</label>
+                <label className="block text-gray-700 mb-2 text-left" htmlFor="city">City:</label>
                 <input
                     type="text"
                     id="city"
@@ -48,7 +48,7 @@ const EmployeeForm = ({ onAddEmployee }: EmployeeFormProps) => {
                 {errors.address?.city && <p className="text-red-500 text-sm mt-1">{errors.address.city.message}</p>}
             </div>  
             <div className="mb-4">
-                <label className="block text-gray-700 mb-2" htmlFor="country">Country:</label>
+                <label className="block text-gray-700 mb-2 text-left" htmlFor="country">Country:</label>
                 <input
                     type="text"
                     id="country"

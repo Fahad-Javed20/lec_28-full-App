@@ -17,7 +17,7 @@ const EmployeeDashboard = () => {
 
   const handleAddEmployee =  (newEmployee: EmployeeType) => {
     setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
-
+  };
   return (
     <div>
       <EmployeeForm onAddEmployee={handleAddEmployee} />
@@ -25,4 +25,5 @@ const EmployeeDashboard = () => {
     </div>
   );
 };
+
 export default EmployeeDashboard;

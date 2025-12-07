@@ -18,7 +18,7 @@ const employees: EmployeeType[] = [
   {
     id: 1,
     name: "Fahad",
-    salary: 4000000000,
+    salary: 40000000,
     address: {
       city: "Lahore",
       country: "Pakistan",
@@ -26,8 +26,8 @@ const employees: EmployeeType[] = [
   },
   {
     id: 2,
-    name: "Fahad",
-    salary: 4000000000,
+    name: "Usama",
+    salary: 7000000,
     address: {
       city: "Lahore",
       country: "Pakistan",
@@ -35,8 +35,8 @@ const employees: EmployeeType[] = [
   },
   {
     id: 3,
-    name: "Fahad",
-    salary: 4000000000,
+    name: "Shehroz",
+    salary: 5000000,
     address: {
       city: "Lahore",
       country: "Pakistan",
